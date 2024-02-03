@@ -13,6 +13,8 @@ public class Config {
     private static ForgeConfigSpec.IntValue GIANT_MACHINE_SIZE;
     private static ForgeConfigSpec.IntValue MAXIMUM_MACHINE_SIZE;
 
+    public static ForgeConfigSpec.BooleanValue AVOID_MOB_SPAWN;
+
 
     static {
         generateConfig();
@@ -44,6 +46,12 @@ public class Config {
                 .defineInRange("maximum", 13, 1, 1024);
 
         builder.pop();
+
+        builder
+                .comment("Avoid Entity Spawn In Compact Dimension")
+                .push("entity_spawn");
+        AVOID_MOB_SPAWN = builder
+                .define("enable", false);
 
         CONFIG = builder.build();
     }
