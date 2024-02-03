@@ -21,4 +21,16 @@ public abstract class RoomSizeMixin implements StringRepresentable{
         int size = getInternalSize();
         return new Vec3i(size, size, size);
     }
+
+    public RoomSize maximum() {
+        int size = 0;
+        RoomSize value = null;
+        for(RoomSize cur : RoomSize.values()){
+            if(cur.getInternalSize() > size){
+                size = cur.getInternalSize();
+                value = cur;
+            }
+        }
+        return value;
+    }
 }
