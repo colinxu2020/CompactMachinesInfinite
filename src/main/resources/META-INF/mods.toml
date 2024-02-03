@@ -42,7 +42,7 @@ authors="Colinxu2020" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-This Mod always you to create custom size of compact machines.
+This Mod always you to custom compact machines.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.compactmachinesinfinite]] #optional
