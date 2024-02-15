@@ -11,10 +11,6 @@ public class EventListener {
         if (!(event.getEntity() instanceof LivingEntity)) {
             return;
         }
-        CompactMachinesInfinite.LOGGER.info(event.getLevel().dimensionTypeId().location().toString());
-        CompactMachinesInfinite.LOGGER.info(event.getEntity().toString());
-        CompactMachinesInfinite.LOGGER.info(event.getLevel().isClientSide());
-        CompactMachinesInfinite.LOGGER.info(event.getLevel().dimensionTypeId().location().toString().equals("compactmachines:compact_world"));
         if (event.getEntity() instanceof Player) {
             return;
         }
