@@ -39,12 +39,4 @@ jobs:
         name: Jar
         path: build/libs/*.jar
         if-no-files-found: error
-    - name: Upload to azure
-      uses: LanceMcCarthy/Action-AzureBlobUpload@v2.4.3
-      with:
-        connection_string: ${{ secrets.azure_connection }}
-        container_name:  main
-        source_folder: build/libs/
-        fail_if_source_empty: true
-        delete_if_exists: false
           
