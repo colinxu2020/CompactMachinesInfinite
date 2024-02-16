@@ -20,6 +20,7 @@ public class EventListener {
         if (!Config.AVOID_MOB_SPAWN.get())return;
 
         if (event.getLevel().dimensionTypeId().location().toString().equals("compactmachines:compact_world")){
+            CompactMachinesInfinite.LOGGER.debug("AVOID SPAWN:" + event.getEntity().toString());
             event.setCanceled(true);
         }
     }

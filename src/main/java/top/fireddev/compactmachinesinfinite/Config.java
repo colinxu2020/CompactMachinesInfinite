@@ -47,11 +47,9 @@ public class Config {
 
         builder.pop();
 
-        builder
-                .comment("Avoid Entity Spawn In Compact Dimension")
-                .push("entity_spawn");
         AVOID_MOB_SPAWN = builder
-                .define("enable", false);
+                .comment("Avoid Entity Spawn In Compact Dimension")
+                .define("avoid_entity_spawn", false);
 
         CONFIG = builder.build();
     }
