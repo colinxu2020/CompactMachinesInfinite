@@ -9,7 +9,7 @@ name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "1.19.2" ]
 
 jobs:
   build:
