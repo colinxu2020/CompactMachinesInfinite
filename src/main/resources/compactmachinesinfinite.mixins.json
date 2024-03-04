@@ -4,6 +4,7 @@
   "package": "top.fireddev.compactmachinesinfinite.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "CompactMachineBlockMixin",
     "RoomSizeMixin"
   ],
   "client": [

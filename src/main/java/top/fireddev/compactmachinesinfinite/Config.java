@@ -1,6 +1,5 @@
 package top.fireddev.compactmachinesinfinite;
 
-import dev.compactmods.machines.api.room.RoomSize;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class Config {
@@ -14,6 +13,7 @@ public class Config {
     private static ForgeConfigSpec.IntValue MAXIMUM_MACHINE_SIZE;
 
     public static ForgeConfigSpec.BooleanValue AVOID_MOB_SPAWN;
+    public static ForgeConfigSpec.BooleanValue ENABLE_BUG_FIX;
 
 
     static {
@@ -50,6 +50,10 @@ public class Config {
         AVOID_MOB_SPAWN = builder
                 .comment("Avoid Entity Spawn In Compact Dimension")
                 .define("avoid_entity_spawn", false);
+
+        ENABLE_BUG_FIX = builder
+                .comment("Fix a compact machines' bug(or future?) which cause the use method doesn't been called correctly")
+                .define("bug_fix", true);
 
         CONFIG = builder.build();
     }
