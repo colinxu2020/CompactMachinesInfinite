@@ -52,7 +52,7 @@ public class Config {
                 .define("avoid_entity_spawn", false);
 
         ENABLE_BUG_FIX = builder
-                .comment("Fix a compact machines' bug(or future?) which cause the use method doesn't been called correctly")
+                .comment("Fix a compact machines' bug which cause the use method doesn't been called correctly")
                 .define("bug_fix", true);
 
         CONFIG = builder.build();

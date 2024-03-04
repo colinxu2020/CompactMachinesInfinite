@@ -6,7 +6,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:/编译器/gradle-7.6.3" />
+        <option name="gradleHome" value="D:/编译器/gradle" />
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
