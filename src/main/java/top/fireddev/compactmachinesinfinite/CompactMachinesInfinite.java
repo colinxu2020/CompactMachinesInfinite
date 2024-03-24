@@ -32,6 +32,7 @@ public class CompactMachinesInfinite
         ctx.registerConfig(ModConfig.Type.COMMON, Config.CONFIG);
 
         MinecraftForge.EVENT_BUS.register(new EventListener());
+        bus.addListener(EventListener::onGatherData);
 
         NewMachines.setup();
         BLOCKS.register(bus);
