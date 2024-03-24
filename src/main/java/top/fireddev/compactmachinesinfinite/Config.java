@@ -11,9 +11,14 @@ public class Config {
     private static ForgeConfigSpec.IntValue LARGE_MACHINE_SIZE;
     private static ForgeConfigSpec.IntValue GIANT_MACHINE_SIZE;
     private static ForgeConfigSpec.IntValue MAXIMUM_MACHINE_SIZE;
+    private static ForgeConfigSpec.IntValue XLARGE_MACHINE_SIZE;
+    private static ForgeConfigSpec.IntValue EXTREME_MACHINE_SIZE;
+    private static ForgeConfigSpec.IntValue ULTRA_MACHINE_SIZE;
 
     public static ForgeConfigSpec.BooleanValue AVOID_MOB_SPAWN;
     public static ForgeConfigSpec.BooleanValue ENABLE_BUG_FIX;
+
+    private static final int  maxMachineSize = 1024, minMachineSize = 1;
 
 
     static {
@@ -28,22 +33,37 @@ public class Config {
                 .push("size");
         TINY_MACHINE_SIZE = builder
                 .comment("Tiny Machine Size")
-                .defineInRange("tiny", 3, 1, 1024);
+                .defineInRange("tiny", 3, minMachineSize, maxMachineSize);
         SMALL_MACHINE_SIZE = builder
                 .comment("Small Machine Size")
-                .defineInRange("small", 5, 1, 1024);
+                .defineInRange("small", 5, minMachineSize, maxMachineSize);
         NORMAL_MACHINE_SIZE = builder
                 .comment("Normal Machine Size")
-                .defineInRange("normal", 7, 1, 1024);
+                .defineInRange("normal", 7, minMachineSize, maxMachineSize);
         LARGE_MACHINE_SIZE = builder
                 .comment("Large Machine Size")
-                .defineInRange("large", 9, 1, 1024);
+                .defineInRange("large", 9, minMachineSize, maxMachineSize);
         GIANT_MACHINE_SIZE = builder
                 .comment("Giant Machine Size")
-                .defineInRange("giant", 11, 1, 1024);
+                .defineInRange("giant", 11, minMachineSize, maxMachineSize);
         MAXIMUM_MACHINE_SIZE = builder
                 .comment("Maximum Machine Size")
-                .defineInRange("maximum", 13, 1, 1024);
+                .defineInRange("maximum", 13, minMachineSize, maxMachineSize);
+        XLARGE_MACHINE_SIZE = builder
+                .comment("Maximum Machine Size")
+                .defineInRange("maximum", 13, minMachineSize, maxMachineSize);
+        MAXIMUM_MACHINE_SIZE = builder
+                .comment("Maximum Machine Size")
+                .defineInRange("maximum", 13, minMachineSize, maxMachineSize);
+        XLARGE_MACHINE_SIZE = builder
+                .comment("XLarge Machine Size")
+                .defineInRange("xlarge", 15, minMachineSize, maxMachineSize);
+        EXTREME_MACHINE_SIZE = builder
+                .comment("Extreme Machine Size")
+                .defineInRange("extreme", 17, minMachineSize, maxMachineSize);
+        ULTRA_MACHINE_SIZE = builder
+                .comment("Ultra Machine Size")
+                .defineInRange("ultra", 19, minMachineSize, maxMachineSize);
 
         builder.pop();
 
@@ -64,6 +84,9 @@ public class Config {
             case "normal" -> NORMAL_MACHINE_SIZE.get();
             case "large" -> LARGE_MACHINE_SIZE.get();
             case "giant" -> GIANT_MACHINE_SIZE.get();
+            case "xlarge" -> XLARGE_MACHINE_SIZE.get();
+            case "extreme" -> EXTREME_MACHINE_SIZE.get();
+            case "ultra" -> ULTRA_MACHINE_SIZE.get();
             default -> MAXIMUM_MACHINE_SIZE.get();
         };
     }
