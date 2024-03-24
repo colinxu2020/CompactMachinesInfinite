@@ -38,6 +38,7 @@ public class CompactMachinesInfinite
         BLOCKS.register(bus);
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
+
         LOGGER.info("Compact Machines Infinite Started Success!");
 
     }
