@@ -1,13 +1,12 @@
 package top.fireddev.compactmachinesinfinite.datagen;
 
-import dev.compactmods.machines.api.room.RoomSize;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import top.fireddev.compactmachinesinfinite.CompactMachinesInfinite;
 
 public class ItemModelProvider extends net.minecraftforge.client.model.generators.ItemModelProvider {
-    public ItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, CompactMachinesInfinite.MODID, existingFileHelper);
+    public ItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, CompactMachinesInfinite.MODID, existingFileHelper);
     }
 
 

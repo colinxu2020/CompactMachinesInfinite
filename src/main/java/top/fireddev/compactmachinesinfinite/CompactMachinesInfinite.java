@@ -33,6 +33,7 @@ public class CompactMachinesInfinite
 
         MinecraftForge.EVENT_BUS.register(new EventListener());
         bus.addListener(EventListener::onGatherData);
+        bus.addListener(EventListener::onBuildCreativeModeTabContents);
 
         NewMachines.setup();
         BLOCKS.register(bus);

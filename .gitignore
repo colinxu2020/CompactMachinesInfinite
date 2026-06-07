@@ -4,6 +4,7 @@
 ### ForgeGradle ###
 # Minecraft client/server files
 run/
+runs/
 
 ### Java ###
 # Compiled class file

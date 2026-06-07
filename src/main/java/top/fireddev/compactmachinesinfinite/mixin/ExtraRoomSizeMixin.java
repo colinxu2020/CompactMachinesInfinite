@@ -44,13 +44,10 @@ public abstract class ExtraRoomSizeMixin {
     @Inject(method = "getFromSize", at = @At("HEAD"), cancellable = true)
     private static void getFromSizeInject(String size, CallbackInfoReturnable<RoomSize> cir){
         CompactMachinesInfinite.LOGGER.info("getting size "+size);
-        switch(size) {
-            case "xlarge":
-                cir.setReturnValue(compactmachinesinfinite$XLARGE);
-            case "extreme":
-                cir.setReturnValue(compactmachinesinfinite$EXTREME);
-            case "ultra":
-                cir.setReturnValue(compactmachinesinfinite$ULTRA);
+        switch(size.toLowerCase()) {
+            case "xlarge" -> cir.setReturnValue(compactmachinesinfinite$XLARGE);
+            case "extreme" -> cir.setReturnValue(compactmachinesinfinite$EXTREME);
+            case "ultra" -> cir.setReturnValue(compactmachinesinfinite$ULTRA);
         }
     }
 }

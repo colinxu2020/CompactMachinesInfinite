@@ -50,12 +50,6 @@ public class Config {
                 .comment("Maximum Machine Size")
                 .defineInRange("maximum", 13, minMachineSize, maxMachineSize);
         XLARGE_MACHINE_SIZE = builder
-                .comment("Maximum Machine Size")
-                .defineInRange("maximum", 13, minMachineSize, maxMachineSize);
-        MAXIMUM_MACHINE_SIZE = builder
-                .comment("Maximum Machine Size")
-                .defineInRange("maximum", 13, minMachineSize, maxMachineSize);
-        XLARGE_MACHINE_SIZE = builder
                 .comment("XLarge Machine Size")
                 .defineInRange("xlarge", 15, minMachineSize, maxMachineSize);
         EXTREME_MACHINE_SIZE = builder

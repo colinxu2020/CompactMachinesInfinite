@@ -1,13 +1,13 @@
 package top.fireddev.compactmachinesinfinite.datagen;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import top.fireddev.compactmachinesinfinite.CompactMachinesInfinite;
 import top.fireddev.compactmachinesinfinite.NewMachines;
 
 public class ChineseLanguageProvider extends LanguageProvider {
-    public ChineseLanguageProvider(DataGenerator gen) {
-        super(gen, CompactMachinesInfinite.MODID, "zh_cn");
+    public ChineseLanguageProvider(PackOutput output) {
+        super(output, CompactMachinesInfinite.MODID, "zh_cn");
     }
     @Override
     protected void addTranslations(){

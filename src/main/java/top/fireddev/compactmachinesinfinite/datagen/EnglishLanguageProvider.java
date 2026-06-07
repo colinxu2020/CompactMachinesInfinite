@@ -1,14 +1,13 @@
 package top.fireddev.compactmachinesinfinite.datagen;
 
-import dev.compactmods.machines.CompactMachines;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import top.fireddev.compactmachinesinfinite.CompactMachinesInfinite;
 import top.fireddev.compactmachinesinfinite.NewMachines;
 
 public class EnglishLanguageProvider extends LanguageProvider {
-    public EnglishLanguageProvider(DataGenerator gen) {
-        super(gen, CompactMachinesInfinite.MODID, "en_us");
+    public EnglishLanguageProvider(PackOutput output) {
+        super(output, CompactMachinesInfinite.MODID, "en_us");
     }
     @Override
     protected void addTranslations(){
