@@ -21,13 +21,13 @@ import top.fireddev.compactmachinesinfinite.RoomSizeHelper;
 
 @Mixin(value = CompactMachineBlock.class, remap = false)
 public abstract class CompactMachineBlockMixin{
-    @Inject(method = "use", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "use", at = @At("TAIL"), cancellable = true, remap = true)
     private void use_inject_server(BlockState state, Level level, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit, @NotNull CallbackInfoReturnable<InteractionResult> cir){
         if(Config.ENABLE_BUG_FIX.get()){
             cir.setReturnValue(InteractionResult.PASS);
         }
     }
-    @Inject(method = "use", at = @At(value = "RETURN", ordinal = 0), cancellable = true)
+    @Inject(method = "use", at = @At(value = "RETURN", ordinal = 0), cancellable = true, remap = true)
     private void use_inject_client(BlockState state, Level level, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit, @NotNull CallbackInfoReturnable<InteractionResult> cir){
         if(Config.ENABLE_BUG_FIX.get()){
             cir.setReturnValue(InteractionResult.PASS);
