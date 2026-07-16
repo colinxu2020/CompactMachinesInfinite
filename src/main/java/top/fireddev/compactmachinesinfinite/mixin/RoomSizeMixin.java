@@ -2,6 +2,7 @@ package top.fireddev.compactmachinesinfinite.mixin;
 
 import dev.compactmods.machines.api.room.RoomSize;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,6 +24,16 @@ public abstract class RoomSizeMixin implements StringRepresentable{
     @Overwrite
     public int getInternalSize() {
         return Config.getRoomSize(this.name);
+    }
+
+    /**
+     * @author Colinxu2020
+     * @reason Support Custom Compact Machine Size
+     */
+    @Overwrite
+    public Vec3i toVec3() {
+        int configuredSize = this.getInternalSize();
+        return new Vec3i(configuredSize, configuredSize, configuredSize);
     }
 
     /**
