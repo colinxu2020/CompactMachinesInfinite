@@ -1,5 +1,6 @@
 package top.fireddev.compactmachinesinfinite;
 
+import dev.compactmods.machines.api.room.RoomSize;
 import dev.compactmods.machines.machine.CompactMachineBlock;
 import dev.compactmods.machines.machine.CompactMachineBlockEntity;
 import dev.compactmods.machines.machine.CompactMachineItem;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 import static top.fireddev.compactmachinesinfinite.CompactMachinesInfinite.*;
