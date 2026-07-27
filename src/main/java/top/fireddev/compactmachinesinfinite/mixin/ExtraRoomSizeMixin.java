@@ -1,10 +1,13 @@
 package top.fireddev.compactmachinesinfinite.mixin;
 
+import com.mojang.serialization.Codec;
 import dev.compactmods.machines.api.room.RoomSize;
+import net.minecraft.util.StringRepresentable;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import top.fireddev.compactmachinesinfinite.CompactMachinesInfinite;
 import top.fireddev.compactmachinesinfinite.RoomSizeHelper;
@@ -18,7 +21,12 @@ public abstract class ExtraRoomSizeMixin {
     @Shadow
     @Final
     @Mutable
+    @Dynamic
     private static RoomSize[] $VALUES;
+    @Shadow
+    @Final
+    @Mutable
+    public static Codec<RoomSize> CODEC;
 
     @Invoker("<init>")
     public static RoomSize compactmachinesinfinite$invokeInit(String internalName, int internalId, String name, int size){
@@ -49,5 +57,10 @@ public abstract class ExtraRoomSizeMixin {
             case "extreme" -> cir.setReturnValue(compactmachinesinfinite$EXTREME);
             case "ultra" -> cir.setReturnValue(compactmachinesinfinite$ULTRA);
         }
+    }
+
+    @Inject(method = "<clinit>", at = @At("TAIL"))
+    private static void compactmachinesinfinite$rebuildCodec(CallbackInfo ci) {
+        CODEC = StringRepresentable.fromEnum(RoomSize::values);
     }
 }
