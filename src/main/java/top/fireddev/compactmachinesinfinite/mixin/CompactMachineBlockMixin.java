@@ -43,8 +43,8 @@ public abstract class CompactMachineBlockMixin{
         if (!Config.ENABLE_BUG_FIX.get()) {
             return;
         }
-        ItemStack mainItem = player.getMainHandItem();
-        if (compactmachinesinfinite$isHandledByCompactMachines(mainItem)) {
+        ItemStack heldItem = player.getItemInHand(handIn);
+        if (compactmachinesinfinite$isHandledByCompactMachines(heldItem)) {
             return;
         }
         cir.setReturnValue(InteractionResult.PASS);

@@ -14,8 +14,10 @@ import top.fireddev.compactmachinesinfinite.RoomLocator;
 public abstract class PersonalShrinkingDeviceMixin {
     @Redirect(
             method = "use",
+            remap = true,
             at = @At(
                     value = "INVOKE",
+                    remap = false,
                     target =
                             "Ldev/compactmods/machines/room/data/CompactRoomData;" +
                                     "setSpawn(" +
