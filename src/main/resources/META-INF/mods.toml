@@ -72,3 +72,10 @@ This Mod always you to custom compact machines.
     versionRange="[6.0.3,7)"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.compactmachinesinfinite]]
+    modId="compactexpansion"
+    mandatory=false
+    versionRange="[0]"
+    ordering="NONE"
+    side="BOTH"

@@ -8,6 +8,8 @@
     "CompactMachineBlockMixin",
     "CompactMachineItemMixin",
     "ExtraRoomSizeMixin",
+    "PersonalShrinkingDeviceMixin",
+    "RoomEventHandlerMixin",
     "RoomSizeMixin"
   ],
   "client": [
