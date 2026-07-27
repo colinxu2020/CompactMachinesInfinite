@@ -21,12 +21,15 @@ public class NewMachines {
 
     static final Supplier<Item.Properties> MACHINE_ITEM_PROPS = Item.Properties::new;
 
-    public static final RegistryObject<Block> MACHINE_BLOCK_XLARGE = BLOCKS.register("machine_xlarge", () ->
-            new CompactMachineBlock(RoomSizeHelper.get("xlarge"), MACHINE_BLOCK_PROPS));
-    public static final RegistryObject<Block> MACHINE_BLOCK_EXTREME = BLOCKS.register("machine_extreme", () ->
-            new CompactMachineBlock(RoomSizeHelper.get("extreme"), MACHINE_BLOCK_PROPS));
-    public static final RegistryObject<Block> MACHINE_BLOCK_ULTRA = BLOCKS.register("machine_ultra", () ->
-            new CompactMachineBlock(RoomSizeHelper.get("ultra"), MACHINE_BLOCK_PROPS));
+    public static final RegistryObject<Block> MACHINE_BLOCK_XLARGE =
+            BLOCKS.register("machine_xlarge", () ->
+                    new CompactMachineBlock(requireRoomSize("xlarge"), MACHINE_BLOCK_PROPS));
+    public static final RegistryObject<Block> MACHINE_BLOCK_EXTREME =
+            BLOCKS.register("machine_extreme", () ->
+                    new CompactMachineBlock(requireRoomSize("extreme"), MACHINE_BLOCK_PROPS));
+    public static final RegistryObject<Block> MACHINE_BLOCK_ULTRA =
+            BLOCKS.register("machine_ultra", () ->
+                    new CompactMachineBlock(requireRoomSize("ultra"), MACHINE_BLOCK_PROPS));
     public static final RegistryObject<Item> MACHINE_BLOCK_ITEM_XLARGE = ITEMS.register("machine_xlarge",
             () -> new CompactMachineItem(MACHINE_BLOCK_XLARGE.get(), MACHINE_ITEM_PROPS.get()));
     public static final RegistryObject<Item> MACHINE_BLOCK_ITEM_EXTREME = ITEMS.register("machine_extreme",
@@ -41,5 +44,13 @@ public class NewMachines {
 
     public static void setup(){
 
+    }
+    private static RoomSize requireRoomSize(String name) {
+        RoomSize.values();
+
+        return Objects.requireNonNull(
+                RoomSizeHelper.get(name),
+                "Compact Machines Infinite failed to initialize room size: " + name
+        );
     }
 }

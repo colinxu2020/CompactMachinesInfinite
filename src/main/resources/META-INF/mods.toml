@@ -70,5 +70,5 @@ This Mod always you to custom compact machines.
     mandatory=true
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="[6.0.3,7)"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"
